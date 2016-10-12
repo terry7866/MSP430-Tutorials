@@ -1,0 +1,21 @@
+#include <msp430g2553.h>
+
+/*
+ * main.c
+ */
+void main(void) {
+
+    int i;
+
+    WDTCTL = WDTPW + WDTHOLD;
+
+    for (;;) {
+        P1OUT = 0x40;
+
+        for (i=0; i<0xFFFF; i++) {
+        } // delay
+        P1OUT = 0x0;
+    } // infinite loop
+
+
+} // main
